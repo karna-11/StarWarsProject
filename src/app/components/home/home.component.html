@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h1 *ngIf="counter" >Star Wars Characters name</h1>
+
+<div *ngIf="!counter">
+    <h2>Fetching Data...</h2>
+    <mat-spinner> </mat-spinner>
+</div>
+<div class="container">
+    <div class="row">
+
+        <!-- <mat-card class="example-card" *ngFor="let d of dataArr ; let i= index "> -->
+        <mat-card class="example-card" *ngFor="let na of newArr ; let i= index ">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{na.name}}</mat-card-title>
+                <!-- <mat-card-title>{{d.name}}</mat-card-title> -->
+                <mat-card-subtitle>Height: {{na.height}} </mat-card-subtitle>
+                <mat-card-subtitle>Mass: {{na.mass}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <button mat-raised-button color="primary" routerLink="more/{{d}}"
+                    (click)="sendDataToMoreInfo(d)">MoreInfo</button>
+                </mat-card-actions> -->
+                <button mat-raised-button color="primary" [routerLink]="['more']" [state]="na">
+                    <!-- <button mat-raised-button [routerLink]="['more']" [state]="d"> -->
+                    More Info
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

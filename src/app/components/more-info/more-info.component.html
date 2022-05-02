@@ -1,0 +1,63 @@
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <h5 class="card-title"> <b>{{charArr.name}}</b> </h5>
+    <h6 class="card-subtitle mb-2 ">Eye Color: <b>{{charArr.eye_color}}</b></h6>
+    <h6 class="card-subtitle mb-2 ">Skin Color: <b>{{charArr.skin_color}}</b></h6>
+    <h6 class="card-subtitle mb-2 ">Hair Color: <b>{{charArr.hair_color}}</b></h6>
+  </div>
+</div>
+
+
+<div class="container">
+  <!-- table for films -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">More Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let film of finalFilmData; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{film.title}}</td>
+        <td> <button mat-raised-button color="primary" (click)="openFilmsDialog(film)" >Details</button> </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- table for vehicles  -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Vehicles</th>
+        <th scope="col">More Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of finalVehicleArr ; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{v.name}}</td>
+        <td> <button mat-raised-button color="primary" (click)="openVehiclesDialog(v)" >Details</button> </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- table for startships -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Star Ships</th>
+        <th scope="col">More Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ss of finalStarshipArr; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ss.name}}</td>
+        <td> <button mat-raised-button color="primary" (click)="openStarshipsDialog(ss)" >Details</button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

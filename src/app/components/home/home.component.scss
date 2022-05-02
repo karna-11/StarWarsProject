@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    margin-left: 20px;
+}
+
+.example-card {
+    max-width: 300px;
+    border: 2px rgb(155, 248, 155) solid;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.mat-spinner{
+    position: relative;
+    left:500px;
+    
+}
